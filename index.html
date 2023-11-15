@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prakhyat's Homework 6</title>
 
-    <!-- Libraries -->
+    <!-- Libraries: jquery, chart.js, anime.js, typeface.js, bootstrap -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeface-roboto"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Styles -->
+    <!-- Styles -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -40,7 +41,9 @@
             margin: 20px;
         }
     </style>
+    
 </head>
+    
 <body>
 
     <header>
@@ -87,7 +90,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Typeface.js Example</h5>
-                <p>This text is styled with the Roboto font from Typeface.js.</p>
+                <p>This text is the Roboto font from Typeface.js.</p>
             </div>
         </div>
     </div>
@@ -100,7 +103,7 @@
             data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June'],
                 datasets: [{
-                    label: 'Monthly Sales',
+                    label: 'Cars Sold by Month at a Dealership',
                     data: [65, 59, 80, 81, 56, 55],
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
@@ -112,7 +115,7 @@
         // jQuery Example
         $(document).ready(function () {
             $("button.btn-success").click(function () {
-                alert("jQuery is working!");
+                alert("jQuery in action!");
             });
         });
 
