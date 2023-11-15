@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Website with Libraries</title>
+    <title>Simple Website with Libraries</title>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -11,86 +11,60 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- SweetAlert2 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <!-- Anime.js -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
 
-    <!-- SweetAlert2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Typeface.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typeface-roboto"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        canvas {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container mt-5">
-        <h1 class="text-center">Enhanced Website with Libraries</h1>
+        <h1 class="text-center">Simple Website with Libraries</h1>
 
         <!-- Bootstrap Alert -->
         <div class="alert alert-primary mt-4" role="alert">
             This is a simple alert from Bootstrap!
         </div>
 
-        <!-- Font Awesome Icon -->
-        <p class="mt-3">
-            Check out this <i class="fas fa-heart text-danger"></i> icon from Font Awesome.
-        </p>
-
-        <!-- Chart.js Bar Chart -->
+        <!-- Chart.js Line Chart -->
         <canvas id="myChart" width="400" height="400" class="mt-4"></canvas>
 
         <!-- jQuery Example -->
         <button class="btn btn-success mt-4">Click me</button>
 
-        <!-- SweetAlert2 Example -->
-        <button class="btn btn-danger mt-4" onclick="showAlert()">Show SweetAlert2</button>
+        <!-- Anime.js Example -->
+        <div id="animeBox" class="mt-4" style="width: 100px; height: 100px; background-color: #3498db;"></div>
 
-        <!-- Bootstrap Modal Trigger Button -->
-        <button class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#myModal">Open Modal</button>
-    </div>
-
-    <!-- Bootstrap Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bootstrap Modal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    This is a Bootstrap modal. You can add more content here.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
-        // Chart.js Bar Chart
+        // Chart.js Line Chart
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
+                    label: 'My First Dataset',
+                    data: [65, 59, 80, 81, 56, 55],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
                 }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
             }
         });
 
@@ -101,19 +75,15 @@
             });
         });
 
-        // SweetAlert2 Example
-        function showAlert() {
-            Swal.fire({
-                title: 'SweetAlert2',
-                text: 'This is a SweetAlert2 example!',
-                icon: 'success',
-                confirmButtonText: 'Got it'
-            });
-        }
+        // Anime.js Example
+        anime({
+            targets: '#animeBox',
+            translateX: 250,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true
+        });
     </script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
